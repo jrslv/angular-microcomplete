@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>AngularJS Microcomplete Directive Demo</title>
+</head>
+<body ng-controller="Ctrl">
+    <p>
+        Start typing one of the following words: {{terms}}<br />
+        and after 3rd+ letter (which is configurable), just press [tab] key.
+    </p>
+    <input type="text" ng-model="sentence" microcomplete="sentence" source="terms" />
+    <button>Like!</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers.js"></script>
+    <script src="directives.js"></script>
+</body>
+</html>
