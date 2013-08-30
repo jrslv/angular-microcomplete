@@ -7,7 +7,7 @@ var directives = angular.module('myApp.directives', []);
  *  `<input type="text" ng-model="sentence" microcomplete="sentence" source="terms" />`
  *  enables microcomplete from array of $scope.terms to the string $scope.sentence
  */
-directives.directive('microcomplete', function($timeout) {
+directives.directive('microcomplete', function() {
     return {
         restrict: 'A',
         link: function(scope, element, attr) {
