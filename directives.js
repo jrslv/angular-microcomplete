@@ -19,8 +19,8 @@ directives.directive('microcomplete', function() {
              * @return String
              */
             var matchWord = function(word, terms) {
-                var search = new RegExp(",?(" + word + "[^,]*),?", "gi");
-                var result = search.exec(terms.toString());
+                var search = new RegExp(",(" + word + "[^,]*),?", "gi");
+                var result = search.exec("," + terms.toString());
                 return result ? result[1] : "";
             };
             element.bind('keyup', function(e) {
@@ -31,7 +31,7 @@ directives.directive('microcomplete', function() {
                     if (match.length) {
                         var search = new RegExp(word + "$", "gi");
                         scope.$apply(function() {
-                            scope[attr.microcomplete] = sentence.replace(search, match)
+                            scope[attr.microcomplete] = sentence.replace(search, match);
                         });
                     }
                 }
